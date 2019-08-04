@@ -4,7 +4,7 @@
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                        b3w-storage
+                        {{ page_name }}
                     </h1>
                     <nav class="breadcrumb" aria-label="breadcrumbs">
                         <ul>
@@ -21,9 +21,7 @@
         </section>
 
         <section class="section">
-            <div class="container">
-                <router-view></router-view>
-            </div>
+            <router-view></router-view>
         </section>
 
         <footer class="footer">
@@ -47,27 +45,12 @@
     </main>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import Markdown from '@/components/Markdown.vue'
+<script>
+import { mapState } from 'vuex'
 
-@Component({
-    components: {
-        Markdown
-    }
-})
-export default class App extends Vue {}
+export default {
+    computed: mapState(['page_name'])
+}
 </script>
 
-<style lang="scss" scoped>
-@import '~bulma/bulma';
-
-// body
-main {
-    font-family: $body-family;
-    color: $body-color;
-    font-size: $body-font-size;
-    font-weight: $body-weight;
-    line-height: $body-line-height;
-}
-</style>
+<style lang="scss" scoped></style>

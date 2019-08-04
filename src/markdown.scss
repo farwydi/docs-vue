@@ -1,0 +1,16 @@
+@import '~@primer/css/support/index.scss';
+
+@import "~@primer/css/base/normalize.scss";
+@import '~@primer/css/base/base.scss';
+@import '~@primer/css/base/typography-base.scss';
+
+@import '~@primer/css/markdown/index';
+
+// fix bulma default styles
+ul {
+    list-style-type: disc;
+}
+
+code {
+  color: $text-gray-dark;
+}
