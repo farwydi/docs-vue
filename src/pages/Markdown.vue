@@ -9,7 +9,7 @@ import { initHighlighting } from 'highlight.js'
 
 export default {
     name: 'Markdown',
-    props: ['page'],
+    props: ['repository', 'md'],
     data() {
         return {
             converter: new Converter(),

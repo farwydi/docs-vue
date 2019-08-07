@@ -12,7 +12,7 @@ export default new Router({
     routes: [
         { path: '/explorer', component: Explorer },
         { path: '/project/:idx', component: Project, props: true },
-        { path: '/repository/:repository', component: Repository, props: true },
-        { path: '/markdown/:page', component: Markdown, props: true }
+        { path: '/repository/:rep', component: Repository, props: true },
+        { path: '/markdown/:repository/:md', component: Markdown, props: true }
     ]
 })
