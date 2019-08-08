@@ -64,7 +64,7 @@ function fake_markdown() {
     })
 }
 
-import { checksum, chunk, extractChunkHash } from '@/hash'
+import { checksum, chunk } from '@/hash'
 
 export default {
     name: 'Explorer',
@@ -78,9 +78,7 @@ export default {
         this.$store.commit('updatePageName', 'Explorer')
     },
     methods: {
-        checksum(ss) {
-            checksum(extractChunkHash(ss))
-        },
+        checksum,
         chunk
     }
 }

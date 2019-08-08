@@ -7,7 +7,7 @@ function extractChunkHash(c) {
 function checksum(ss) {
     let hash = 0,
         char,
-        s = ss.join('')
+        s = extractChunkHash(ss).join('')
     if (s.length == 0) return hash
     for (let i = 0, l = s.length; i < l; i++) {
         char = s.charCodeAt(i)
@@ -26,4 +26,4 @@ function chunk(array, chunk_size) {
     )
 }
 
-export { extractChunkHash, checksum, chunk }
+export { checksum, chunk }

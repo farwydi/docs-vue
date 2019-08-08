@@ -76,7 +76,7 @@ function fake_markdown() {
     })
 }
 
-import { checksum, chunk, extractChunkHash } from '@/hash'
+import { checksum, chunk } from '@/hash'
 
 export default {
     name: 'Repository',
@@ -94,9 +94,7 @@ export default {
         }
     },
     methods: {
-        checksum(ss) {
-            checksum(extractChunkHash(ss))
-        },
+        checksum,
         chunk
     }
 }
