@@ -3,7 +3,7 @@
         <h2 class="title">Projects</h2>
         <div
             class="columns"
-            v-bind:key="checksum(chunk_projects)"
+            v-bind:key="checksumByHash(chunk_projects)"
             v-for="chunk_projects in chunk(projects, 4)"
         >
             <div
@@ -16,7 +16,7 @@
         </div>
         <h2 class="title">Repositories</h2>
         <div
-            v-bind:key="checksum(chunk_repositories)"
+            v-bind:key="checksumByHash(chunk_repositories)"
             class="columns"
             v-for="chunk_repositories in chunk(repositories, 4)"
         >
@@ -64,7 +64,7 @@ function fake_markdown() {
     })
 }
 
-import { checksum, chunk } from '@/hash'
+import { checksumByHash, chunk } from '@/hash'
 
 export default {
     name: 'Explorer',
@@ -78,7 +78,7 @@ export default {
         this.$store.commit('updatePageName', 'Explorer')
     },
     methods: {
-        checksum,
+        checksumByHash,
         chunk
     }
 }

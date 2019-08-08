@@ -7,7 +7,7 @@ function extractChunkHash(c) {
 function checksum(ss) {
     let hash = 0,
         char,
-        s = extractChunkHash(ss).join('')
+        s = ss.join('')
     if (s.length == 0) return hash
     for (let i = 0, l = s.length; i < l; i++) {
         char = s.charCodeAt(i)
@@ -15,6 +15,10 @@ function checksum(ss) {
         hash |= 0 // Convert to 32bit integer
     }
     return hash
+}
+
+function checksumByHash(ss) {
+    return checksum(extractChunkHash(ss))
 }
 
 function chunk(array, chunk_size) {
@@ -26,4 +30,4 @@ function chunk(array, chunk_size) {
     )
 }
 
-export { checksum, chunk }
+export { checksum, checksumByHash, chunk }

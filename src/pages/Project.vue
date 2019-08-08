@@ -19,7 +19,7 @@
 
         <h2 class="title">Repositories</h2>
         <div
-            v-bind:key="checksum(chunk_repositories)"
+            v-bind:key="checksumByHash(chunk_repositories)"
             class="columns"
             v-for="chunk_repositories in chunk(project.repositories, 4)"
         >
@@ -65,7 +65,7 @@ function fake_markdown() {
     })
 }
 
-import { checksum, chunk } from '@/hash'
+import { checksumByHash, chunk } from '@/hash'
 
 export default {
     name: 'Project',
@@ -82,7 +82,7 @@ export default {
         })
     },
     methods: {
-        checksum,
+        checksumByHash,
         chunk
     },
     props: ['idx']

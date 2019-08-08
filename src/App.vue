@@ -18,7 +18,7 @@
                                 </router-link>
                             </li>
                             <li
-                                v-bind:key="p.title + p.href"
+                                v-bind:key="checksum([p.title, p.href])"
                                 v-for="(p, index) in path"
                                 v-bind:class="{
                                     'is-active': index == path.length - 1
@@ -68,6 +68,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { checksum } from '@/hash'
 
 export default {
     computed: mapState(['page_name', 'path']),
@@ -75,6 +76,9 @@ export default {
         $route(to, from) {
             if (to.fullPath !== from.fullPath) this.$store.commit('resetPath')
         }
+    },
+    methods: {
+        checksum
     }
 }
 </script>
