@@ -83,6 +83,10 @@ export default {
     props: ['rep'],
     mounted() {
         this.$store.commit('updatePageName', this.repositories.title)
+        this.$store.commit('addPath', {
+            href: `/repository/${this.repositories.title}`,
+            title: this.repositories.title
+        })
     },
     data() {
         return {
@@ -98,9 +102,4 @@ export default {
 }
 </script>
 
-<style scoped lang="sass">
-@import '~bulma/sass/utilities/initial-variables'
-@import '~bulma/sass/utilities/derived-variables'
-.md-list
-    font-size: $size-normal
-</style>
+<style></style>

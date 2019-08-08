@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "@fortawesome/free-solid-svg-icons": "^5.10.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "@primer/css": "^12.5.0",
     "@types/chance": "^1.0.5",
     "axios": "^0.19.0",
@@ -27,6 +30,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "@types/highlight.js": "^9.12.3",
     "@types/showdown": "^1.9.3",
     "@vue/cli-plugin-babel": "^3.9.0",

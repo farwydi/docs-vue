@@ -8,11 +8,32 @@
                     </h1>
                     <nav class="breadcrumb" aria-label="breadcrumbs">
                         <ul>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Storage</a></li>
-                            <li><a href="#">b3w-storage</a></li>
-                            <li class="is-active">
-                                <a href="#" aria-current="page">README</a>
+                            <li>
+                                <router-link to="/explorer">
+                                    <span class="icon">
+                                        <font-awesome-icon
+                                            icon="map-marker-alt"
+                                        />
+                                    </span>
+                                </router-link>
+                            </li>
+                            <li
+                                v-bind:key="p.title + p.href"
+                                v-for="(p, index) in path"
+                                v-bind:class="{
+                                    'is-active': index == path.length - 1
+                                }"
+                            >
+                                <div v-if="index == path.length - 1">
+                                    <a v-bind:href="p.href" aria-current="page">
+                                        {{ p.title }}
+                                    </a>
+                                </div>
+                                <div v-else>
+                                    <router-link v-bind:to="p.href">
+                                        {{ p.title }}
+                                    </router-link>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -49,7 +70,12 @@
 import { mapState } from 'vuex'
 
 export default {
-    computed: mapState(['page_name'])
+    computed: mapState(['page_name', 'path']),
+    watch: {
+        $route(to, from) {
+            if (to.fullPath !== from.fullPath) this.$store.commit('resetPath')
+        }
+    }
 }
 </script>
 

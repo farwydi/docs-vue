@@ -76,6 +76,10 @@ export default {
     },
     mounted() {
         this.$store.commit('updatePageName', this.project.title)
+        this.$store.commit('addPath', {
+            href: `/project/${this.project.title}`,
+            title: this.project.title
+        })
     },
     methods: {
         checksum(ss) {

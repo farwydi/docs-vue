@@ -18,6 +18,14 @@ export default {
     },
     mounted() {
         this.$store.commit('updatePageName', 'README.md')
+        this.$store.commit('addPath', {
+            href: `/repository/${this.repository}`,
+            title: this.repository
+        })
+        this.$store.commit('addPath', {
+            href: `/md/${this.repository}`,
+            title: this.md
+        })
 
         this.converter.setFlavor('github')
         this.converter.setOption('simpleLineBreaks', false)
