@@ -1,5 +1,5 @@
 <template>
-    <section class="container">
+    <div class="container">
         <progress
             v-if="loading"
             class="progress is-small is-primary"
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -46,8 +46,8 @@ export default {
     name: 'Explorer',
     data() {
         return {
-            projects: false,
-            repositories: false,
+            projects: [],
+            repositories: [],
             loading: true
         }
     },
@@ -88,7 +88,6 @@ export default {
                 }
             }`
         ])
-        this.loading = false
     },
     methods: {
         checksumByHash,
@@ -99,6 +98,7 @@ export default {
                     return axios.post('/api/graphql', { query })
                 })
             )
+            this.loading = false
             results.map(result => {
                 try {
                     if (!result.data.data) {
