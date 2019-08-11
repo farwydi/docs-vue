@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state: {
         title: 'Docs',
         page_name: '',
+        loading: true,
         path: []
     },
     mutations: {
@@ -14,7 +15,14 @@ export default new Vuex.Store({
             state.page_name = name
         },
         resetPath(state) {
+            state.loading = true
             state.path = []
+        },
+        show(state) {
+            state.loading = true
+        },
+        hide(state) {
+            state.loading = false
         },
         addPath(state, path: { href: any; title: any }) {
             //@ts-ignore

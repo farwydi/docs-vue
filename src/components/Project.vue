@@ -7,10 +7,10 @@
                         v-if="project.parent"
                         class="subtitle is-6 is-block"
                         v-bind:to="{
-                            path: `/project/${project.parent}`
+                            path: `/project/${project.parent.title}`
                         }"
                     >
-                        @{{ project.parent }}
+                        @{{ project.parent.title }}
                     </router-link>
                     <router-link
                         class="title is-4 is-block"
