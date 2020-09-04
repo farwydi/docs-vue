@@ -20,7 +20,7 @@
     "highlight.js": "^9.15.9",
     "postcss-node-sass": "^2.1.8",
     "postcss-scss": "^2.0.0",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "v-runtime-template": "^1.10.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
