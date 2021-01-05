@@ -13,7 +13,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@primer/css": "^12.5.0",
     "@types/chance": "^1.0.5",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bulma": "^0.7.5",
     "chance": "^1.0.18",
     "core-js": "^2.6.5",
